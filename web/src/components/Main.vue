@@ -1,7 +1,30 @@
 <template>
   <div class="hello">
     <br/><br/><h1>{{ msg }}</h1>
+    <br/><br/><h2>MEMBER LOGIN</h2>
+    <b-form @submit="onSubmit" @reset="onReset" v-if="show">
+     <b-form-group id="input-group-1" label="Your ID:" label-for="input-1">
+       <b-form-input
+         id="input-1"
+         v-model="form.id"
+         required
+         placeholder="Enter ID"
+       ></b-form-input>
+     </b-form-group>
+     <b-form-group id="input-group-2" label="Your Password:" label-for="input-2">
+       <b-form-input
+         id="input-2"
+         v-model="form.passwd"
+         required
+         placeholder="Enter Password"
+       ></b-form-input>
+     </b-form-group>
+
+     <b-button type="submit" variant="primary">Submit</b-button>
+     <b-button type="reset" variant="danger">Reset</b-button>
+   </b-form>
   </div>
+
 </template>
 
 <script>
@@ -9,8 +32,13 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: '학생 정보 관리 사이트에 오신 것을 환영합니다.'
-    }
+      msg: '학생 정보 관리 사이트에 오신 것을 환영합니다.',
+      form:{
+      id: '',
+      passwd: '',
+    },
+    show: true
+  }
   }
 }
 </script>
