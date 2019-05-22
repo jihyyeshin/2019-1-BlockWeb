@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-navbar toggleable="lg" type="dark" variant="info">
-      <b-navbar-brand href="/">학생정보관리사이트</b-navbar-brand>
+      <b-navbar-brand href="/">OGU</b-navbar-brand>
 
       <b-navbar-toggle target="nav_collapse"/>
 
