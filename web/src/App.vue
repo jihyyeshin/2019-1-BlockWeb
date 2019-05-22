@@ -4,7 +4,7 @@
     <router-view/>
   </div>
 </template>
-
+<!-- 홈화면 -->
 <script>
 import Header from '@/components/Header'
 export default {

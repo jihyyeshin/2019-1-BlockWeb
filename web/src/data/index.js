@@ -41,40 +41,4 @@ export default {
       updated_at: null
     }
   ],
-  Comment: [
-    {
-      comment_id: 1,
-      user_id: 1,
-      content_id: 3,
-      context: '안녕하세요~',
-      created_at: '2019-03-29 14:11:11',
-      updated_at: null
-    },
-    {
-      comment_id: 2,
-      user_id: 3,
-      content_id: 3,
-      context: '새로운 수강과목',
-      created_at: '2019-03-29 16:11:11',
-      updated_at: null
-    },
-    {
-      comment_id: 3,
-      user_id: 2,
-      content_id: 1,
-      context: '싫어요',
-      created_at: '2019-03-29 14:11:11',
-      updated_at: null
-    }
-  ],
-  SubComment: [
-    {
-      subcomment_id: 1,
-      comment_id: 3,
-      user_id: 1,
-      context: '좋아요',
-      created_at: '2019-03-29 16:22:11',
-      updated_at: null
-    }
-  ]
 }

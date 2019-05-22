@@ -1,6 +1,7 @@
 <template>
   <div>
-    <b-table striped hover :items="items" :fields="fields" @row-clicked="rowClick"></b-table>
+    <b-table striped hover :items="items" :fields="fields"></b-table>
+
   </div>
 </template>
 
@@ -33,12 +34,12 @@ items = items.map(contentItem => {return {...contentItem, user_name: data.User.f
       items: items
       }
     },
-    methods:{
-      rowClick(item, index, e){
-        this.$router.push({
-          path:'/board/free/detail/${item.content}'
-        })
-      }
-    }
+    // methods:{
+    //   rowClick(item, index, e){
+    //     this.$router.push({
+    //       path:'/board/free/detail/${item.content}'
+    //     })
+    //   }
+    // }
   }
 </script>
