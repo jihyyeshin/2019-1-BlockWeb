@@ -35,3 +35,56 @@ export default new Router({
     },
   ]
 })
+
+var express = require('express');
+var router = express.Router();
+
+var mysql = require("mysql");
+
+var client = mysql.createConnection({
+  user: "root",
+  password: "1234",
+  database: "nodedb"
+})
+
+router.get('/', function(req, res, next) {
+  client.query("SELECT * FROM products;", function(err, result, fields){
+    if(err){
+      console.log("쿼리문에 오류가 있습니다.");
+    }
+    else{
+      res.json(result);
+    }
+  });
+
+});
+module.exports = router;
+
+
+router.get('/create', function(req, res, next) {
+  res.render('create');
+});
+
+
+router.post('/create', function(req, res, next) {
+  var body = req.body;
+
+  client.query("INSERT INTO products (name, modelnumber, series) VALUES (?, ?, ?)", [
+      body.name, body.modelnumber, body.series
+    ], function(){
+    res.redirect("/create");
+  });
+});router.get('/create', function(req, res, next) {
+  res.render('create');
+});
+
+
+router.post('/create', function(req, res, next) {
+  var body = req.body;
+
+  client.query("INSERT INTO products (name, modelnumber, series) VALUES (?, ?, ?)", [
+      body.name, body.modelnumber, body.series
+    ], function(){
+    res.redirect("/create");
+  });
+});
